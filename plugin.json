@@ -2,7 +2,7 @@
   "name": "siyuan-pele",
   "author": "fu1fan",
   "url": "https://github.com/fu1fan/siyuan-pele",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "minAppVersion": "3.8.12",
   "backends": ["all"],
   "frontends": ["desktop", "desktop-window", "browser-desktop", "mobile", "browser-mobile"],
