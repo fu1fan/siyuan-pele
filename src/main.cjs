@@ -23,7 +23,7 @@ function math(tex, size) {
 
 const options = { icons, math, autoDirection: false, responsive: true, links: true, images: true };
 const viewOptions = {
-  ...options, zoom: "auto",
+  ...options, zoom: false,
   sanitize(svg) {
     return window.DOMPurify.sanitize(svg, {
       USE_PROFILES: {svg: true, svgFilters: true},
@@ -35,7 +35,6 @@ const viewOptions = {
 module.exports = class PelePlugin extends Plugin {
   onload() {
     this.views = new Map();
-    this.dialogs = new Set();
     this.patch = () => {
       const api = window.mermaid;
       if (!api?.render || this.api === api) return;
@@ -111,34 +110,10 @@ module.exports = class PelePlugin extends Plugin {
         onRender: () => { host.hidden = false; slot.classList.add("siyuan-pele-original"); },
         onError: () => { host.hidden = true; slot.classList.remove("siyuan-pele-original"); }
       });
-      host.addEventListener("dblclick", event => {
-        if (!event.target.closest("a, button")) this.expand(source);
-      });
     } catch {
       host.hidden = true;
       slot.classList.remove("siyuan-pele-original");
     }
-  }
-
-  expand(source) {
-    const dialog = document.createElement("dialog");
-    dialog.className = "siyuan-pele-dialog";
-    const host = document.createElement("div");
-    host.className = "siyuan-pele";
-    const close = document.createElement("button");
-    close.textContent = "×";
-    close.setAttribute("aria-label", "Close");
-    close.onclick = () => dialog.close();
-    dialog.append(close, host);
-    document.body.append(dialog);
-    dialog.showModal();
-    const diagram = mount(host, source, {...viewOptions, zoom: {always: true}});
-    this.dialogs.add(dialog);
-    dialog.addEventListener("close", () => {
-      diagram.destroy();
-      dialog.remove();
-      this.dialogs.delete(dialog);
-    }, {once: true});
   }
 
   drop(block) {
@@ -154,7 +129,6 @@ module.exports = class PelePlugin extends Plugin {
     this.observer.disconnect();
     document.removeEventListener("load", this.patch, true);
     this.restore?.();
-    for (const dialog of this.dialogs) dialog.close();
     for (const block of this.views.keys()) this.drop(block);
     document.querySelectorAll(selector).forEach(block => {
       if (block.querySelector("[data-siyuan-pele-static]")) {

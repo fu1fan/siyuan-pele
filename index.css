@@ -12,15 +12,3 @@
   min-width: 0;
 }
 .siyuan-pele-original { display: none !important; }
-.siyuan-pele-dialog {
-  width: 90vw;
-  max-height: 90vh;
-  padding: 1rem;
-  overflow: auto;
-  color: var(--b3-theme-on-background);
-  background: var(--b3-theme-background);
-  border: 1px solid var(--b3-border-color);
-  border-radius: 8px;
-}
-.siyuan-pele-dialog::backdrop { background: #0008; }
-.siyuan-pele-dialog > button { display: block; margin-inline-start: auto; cursor: pointer; }

@@ -1,6 +1,6 @@
 # Pele for SiYuan
 
-用 [Pele](https://github.com/obsidianmd/pele) 绘制思源的 Mermaid 块。继续用思源原有的代码块编辑器编写 Mermaid。插件只接管显示，能随思源主题和容器宽度更新。默认保留源码方向。大图支持 Pele 的缩放控件，双击图面可打开大图，按 Esc 关闭。
+用 [Pele](https://github.com/obsidianmd/pele) 绘制思源的 Mermaid 块。继续用思源原有的代码块编辑器编写 Mermaid。插件只接管显示，能随思源主题和容器宽度更新。默认保留源码方向。在正文中可直接使用思源的图表编辑按钮。查看大图时使用思源自带的图片浏览工具，在查看器内缩放，按 Esc 返回正文。
 
 ## 安装
 
