@@ -1,0 +1,26 @@
+.siyuan-pele {
+  --pele-bg: var(--b3-theme-background);
+  --pele-fg: var(--b3-theme-on-background);
+  --pele-line: var(--b3-theme-on-background);
+  --pele-muted: var(--b3-theme-on-surface);
+  --pele-surface: var(--b3-theme-surface);
+  --pele-surface-alt: var(--b3-theme-surface-lighter);
+  --pele-border: var(--b3-border-color);
+  --pele-accent: var(--b3-theme-primary);
+  --pele-font: var(--b3-font-family);
+  width: 100%;
+  min-width: 0;
+}
+.siyuan-pele-original { display: none !important; }
+.siyuan-pele-dialog {
+  width: 90vw;
+  max-height: 90vh;
+  padding: 1rem;
+  overflow: auto;
+  color: var(--b3-theme-on-background);
+  background: var(--b3-theme-background);
+  border: 1px solid var(--b3-border-color);
+  border-radius: 8px;
+}
+.siyuan-pele-dialog::backdrop { background: #0008; }
+.siyuan-pele-dialog > button { display: block; margin-inline-start: auto; cursor: pointer; }

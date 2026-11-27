@@ -1,0 +1,13 @@
+{
+  "name": "siyuan-pele",
+  "author": "fu1fan",
+  "url": "https://github.com/fu1fan/siyuan-pele",
+  "version": "0.1.0",
+  "minAppVersion": "3.8.12",
+  "backends": ["all"],
+  "frontends": ["desktop", "desktop-window", "browser-desktop", "mobile", "browser-mobile"],
+  "displayName": {"default": "Pele for Mermaid", "zh-CN": "Pele 图表"},
+  "description": {"default": "Render SiYuan Mermaid blocks with Pele.", "zh-CN": "用 Pele 渲染思源 Mermaid 图表。"},
+  "readme": {"default": "README.md"},
+  "keywords": ["mermaid", "pele", "svg"]
+}

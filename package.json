@@ -1,0 +1,15 @@
+{
+  "name": "siyuan-pele",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "pele": "1.13.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}
